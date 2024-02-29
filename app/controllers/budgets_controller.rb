@@ -3,7 +3,7 @@ class BudgetsController < ApplicationController
 
   # GET /budgets
   def index
-    @budgets = Budget.all
+    @budgets = Budget.order(created_at: :desc)
   end
 
   # GET /budgets/1
@@ -33,7 +33,7 @@ class BudgetsController < ApplicationController
   # PATCH/PUT /budgets/1
   def update
     if @budget.update(budget_params)
-      redirect_to @budget, notice: "Budget was successfully updated.", status: :see_other
+      redirect_to Budget, status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end

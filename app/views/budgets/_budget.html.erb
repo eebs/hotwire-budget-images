@@ -1,12 +1,8 @@
-<div id="<%= dom_id budget %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= budget.name %>
-  </p>
+<div id="<%= dom_id budget %>" class="max-w-52 rounded-lg shadow-lg">
+  <%= image_tag "grasp.png", size: "740x520", class: "rounded-t-lg" %>
 
-  <% if action_name != "show" %>
-    <%= link_to "Show this budget", budget, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to "Edit this budget", edit_budget_path(budget), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
+  <%= link_to budget, class: "p-3 flex flex-col items-center" do %>
+    <h2 class="text-xl"><%= budget.name %></h2>
+    <p class="text-sm">Last used <%= time_ago_in_words(budget.updated_at) %> ago</p>
   <% end %>
 </div>
