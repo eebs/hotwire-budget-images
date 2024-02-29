@@ -1,5 +1,5 @@
-<div id="<%= dom_id budget %>" class="max-w-52 rounded-lg shadow-lg">
-  <%= image_tag "grasp.png", size: "740x520", class: "rounded-t-lg" %>
+<div id="<%= dom_id budget %>" class="max-w-80 rounded-lg shadow-lg hover:brightness-90">
+  <%= render "image", budget: %>
 
   <%= link_to budget, class: "p-3 flex flex-col items-center" do %>
     <h2 class="text-xl"><%= budget.name %></h2>

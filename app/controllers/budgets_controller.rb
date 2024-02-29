@@ -3,7 +3,7 @@ class BudgetsController < ApplicationController
 
   # GET /budgets
   def index
-    @budgets = Budget.order(created_at: :desc)
+    @budgets = Budget.order(created_at: :desc).with_attached_hero
   end
 
   # GET /budgets/1
@@ -53,6 +53,6 @@ class BudgetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def budget_params
-      params.require(:budget).permit(:name)
+      params.require(:budget).permit(:name, :hero)
     end
 end

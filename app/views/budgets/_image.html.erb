@@ -1,0 +1,5 @@
+<% if budget.hero.representable? %>
+  <%= image_tag rails_storage_proxy_path(budget.hero.variant(:card)), class: "rounded-t-lg" %>
+<% else %>
+  <%= image_tag "grasp.png", class: "rounded-t-lg" %>
+<% end %>
