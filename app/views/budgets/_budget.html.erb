@@ -1,8 +1,10 @@
-<div id="<%= dom_id budget %>" class="max-w-80 rounded-lg shadow-lg hover:brightness-90">
-  <%= render "hero", budget: %>
+<% cache budget do %>
+  <div id="<%= dom_id budget %>" class="max-w-80 rounded-lg shadow-lg hover:brightness-90">
+    <%= render "hero", budget: %>
 
-  <%= link_to budget, class: "p-3 flex flex-col items-center" do %>
-    <h2 class="text-xl"><%= budget.name %></h2>
-    <p class="text-sm">Last used <%= time_ago_in_words(budget.updated_at) %> ago</p>
-  <% end %>
-</div>
+    <%= link_to budget, class: "p-3 flex flex-col items-center" do %>
+      <h2 class="text-xl"><%= budget.name %></h2>
+      <p class="text-sm">Last used <%= time_ago_in_words(budget.updated_at) %> ago</p>
+    <% end %>
+  </div>
+<% end %>

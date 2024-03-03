@@ -4,10 +4,12 @@ class BudgetsController < ApplicationController
   # GET /budgets
   def index
     @budgets = Budget.order(created_at: :desc).with_attached_hero
+    fresh_when(@budgets)
   end
 
   # GET /budgets/1
   def show
+    fresh_when(@budget)
   end
 
   # GET /budgets/new
