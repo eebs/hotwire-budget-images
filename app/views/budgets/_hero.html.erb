@@ -1,0 +1,9 @@
+<%= hero_form_with(budget) do |form| %>
+  <%= form.file_field(
+    :hero,
+    direct_upload: true,
+    hidden: true,
+    data: {upload_target: "input"}
+  ) %>
+  <%= render "image", budget: %>
+<% end %>
